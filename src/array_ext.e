@@ -3,6 +3,11 @@
 		Sequences of values, all of the same type or of a conforming one,
 		accessible through integer indices in a contiguous interval.
 	]"
+	design: "[
+		Additional features include a JSON-based representation of the
+		array, such that JSON-based systems can easily interact with
+		Eiffel ARRAYs.
+		]"
 
 class
 	ARRAY_EXT [G -> HASHABLE]

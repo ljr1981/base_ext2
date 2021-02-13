@@ -1,5 +1,12 @@
 ﻿note
-	description: "Summary description for {ARRAY_COMPARABLE}."
+	description: "Arrays that have comparable items that can be sorted."
+	design: "[
+		The items are sorted by {HASHABLE}.hash_code. Array items are
+		converted to {TUPLE} because it is hashable and array is not.
+		Once all items are hashable, then they can be sorted by their
+		hash codes in ascending or descending order. This is not a perfect
+		or even good or best solution. However, it works for the most part.
+		]"
 
 class
 	ARRAY_COMPARABLE [G -> HASHABLE]
@@ -19,7 +26,7 @@ create
 feature -- Transformation
 
 	sort_asc
-			--
+			-- Sort Current ascending.
 		local
 			i: INTEGER
 		do
@@ -30,7 +37,7 @@ feature -- Transformation
 		end
 
 	sort_desc
-			--
+			-- Sort Current descending.
 		local
 			i: INTEGER
 		do
@@ -41,7 +48,7 @@ feature -- Transformation
 		end
 
 	sorted_asc: ARRAY [HASHABLE]
-			--
+			-- An ascending version of Current.
 		local
 			l_sorted: SORTED_TWO_WAY_LIST [INTEGER]
 			l_hash: HASH_TABLE [HASHABLE, INTEGER]

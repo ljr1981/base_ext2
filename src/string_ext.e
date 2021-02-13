@@ -1,5 +1,10 @@
 ﻿note
 	description: "Extension on {STRING_32}"
+	design: "[
+		Most of the new functions are about repeating elements
+		with various delimiters. There is also the notion of
+		minus.
+		]"
 
 class
 	STRING_EXT
