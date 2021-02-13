@@ -65,7 +65,7 @@ feature -- Conversion
 			l_array: ARRAY [HASHABLE]
 			i: INTEGER
 		do
-			create Result.make (0)
+			create Result.make (a_array.upper)
 			⟳ ic:a_array ¦
 				if attached {STRING} ic as al_string then
 					Result.extend (create {JSON_STRING}.make_from_string (al_string))
